@@ -1,0 +1,401 @@
+[
+    {
+        "lat": -6.6776664,
+        "lng": 107.6828854,
+        "desc": "<b>Iwan - Cagak</b><br>Nomor: 0813-2123-1482<br>Tempo: 37 Hari<br>Status: Aktif<br>Limit: Rp. 40.000.000<br>Penggunaan: Rp. 20.000.000 - Rp. 30.000.000<br>Keterangan: Pembayaran Tepat waktu",
+        "hari": "senin",
+        "wilayah": "subang"
+    },
+    {
+        "lat": -6.6785583,
+        "lng": 107.6891509,
+        "desc": "<b>Purnama Jaya - cagak</b><br>Nomor: 0821-2744-4497<br>Tempo: 37 Hari<br>Status: Aktif<br>Limit: Rp. 240.000.000<br>Penggunaan: Rp. 90.000.000 - Rp. 150.000.000<br>Keterangan: Sterofoam sudah pindah ke TKS",
+        "hari": "senin",
+        "wilayah": "subang"
+    },
+    {
+        "lat": -6.569409,
+        "lng": 107.7570277,
+        "desc": "<b>Guna Jaya - Subang</b><br>Nomor: 0813-9400-2888<br>Tempo: 37 Hari<br>Status: Tidak Aktif<br>Limit: Rp. 12.000.000<br>Penggunaan: Rp. 5.000.000 - Rp. 10.000.000<br>Keterangan: Pembayaran selalu telat",
+        "hari": "senin",
+        "wilayah": "subang"
+    },
+    {
+        "lat": -6.56936,
+        "lng": 107.7575856,
+        "desc": "<b>Damai Jaya - Subang</b><br>Nomor: 0813-2076-1908<br>Tempo: 37 Hari<br>Status: Aktif<br>Limit: Rp. 120.000.000<br>Penggunaan: Rp. 25.000.000 - Rp. 50.000.000<br>Keterangan: Pembayaran Tepat waktu",
+        "hari": "senin",
+        "wilayah": "subang"
+    },
+    {
+        "lat": -6.5625189,
+        "lng": 107.7623616,
+        "desc": "<b>Sri rejeki - Pasar panjang</b><br>Nomor: 0823-1779-9940<br>Tempo: 37 Hari<br>Status: Tidak Aktif<br>Limit: Rp. 24.000.000<br>Penggunaan: Rp. 0<br>Keterangan: Pembayaran selalu telat",
+        "hari": "senin",
+        "wilayah": "subang"
+    },
+    {
+        "lat": -6.5624287,
+        "lng": 107.7623767,
+        "desc": "<b>Mekar Jaya - Pasar panjang</b><br>Nomor: 0821-1414-1212<br>Tempo: 37 Hari<br>Status: Aktif<br>Limit: Rp. 15.000.000<br>Penggunaan: Rp. 4.000.000 - Rp. 6.000.000<br>Keterangan: Pembayaran suka telat",
+        "hari": "senin",
+        "wilayah": "subang"
+    },
+    {
+        "lat": -6.5623611,
+        "lng": 107.7624146,
+        "desc": "<b>Hj aput - Pasar panjang</b><br>Nomor: 0821-1904-3989<br>Tempo: 37 Hari<br>Status: Aktif<br>Limit: Rp. 12.000.000<br>Penggunaan: Rp. 3.000.000 - Rp. 5.000.000<br>Keterangan: Pembayaran selalu telat",
+        "hari": "senin",
+        "wilayah": "subang"
+    },
+    {
+        "lat": -6.5623051,
+        "lng": 107.7624531,
+        "desc": "<b>Hj Isam - Pasar panjang</b><br>Nomor: 0899-6345-183<br>Tempo: 17 Hari<br>Status: Aktif<br>Limit: Rp. 24.000.000<br>Penggunaan: Rp. 2.000.000 - Rp. 5.000.000<br>Keterangan: Pembayaran Tepat waktu",
+        "hari": "senin",
+        "wilayah": "subang"
+    },
+    {
+        "lat": -6.5619614,
+        "lng": 107.7626006,
+        "desc": "<b>Jaya Langgeng - Pasar panjang</b><br>Nomor: 0812-2220-5120<br>Tempo: 17 Hari<br>Status: Aktif<br>Limit: Rp. 18.000.000<br>Penggunaan: Rp. 2.000.000 - Rp. 4.000.000<br>Keterangan: Pembayaran kadang telat",
+        "hari": "senin",
+        "wilayah": "subang"
+    },
+    {
+        "lat": -6.5611836,
+        "lng": 107.7627703,
+        "desc": "<b>Toko Maju - Pasar panjang</b><br>Nomor: 0813-1527-7819<br>Tempo: 21 Hari<br>Status: Aktif<br>Limit: Rp. 32.000.000<br>Penggunaan: Rp. 14.000.000 - Rp. 25.000.000<br>Keterangan: Pembayaran Tepat waktu",
+        "hari": "senin",
+        "wilayah": "subang"
+    },
+    {
+        "lat": -6.5594823,
+        "lng": 107.7622972,
+        "desc": "<b>Duta - Pasar panjang</b><br>Nomor: 0899-6363-830<br>Tempo: 37 Hari<br>Status: Aktif<br>Limit: Rp. 12.000.000<br>Penggunaan: Rp. 3.000.000 - Rp. 5.000.000<br>Keterangan: Pembayaran suka telat",
+        "hari": "senin",
+        "wilayah": "subang"
+    },
+    {
+        "lat": -6.5669379,
+        "lng": 107.7588787,
+        "desc": "<b>Sumber Laris - subang</b><br>Nomor: 0823-1819-8740<br>Tempo: 37 Hari<br>Status: Aktif<br>Limit: Rp. 24.000.000<br>Penggunaan: Rp. 10.000.000 - Rp. 20.000.000<br>Keterangan: Pembayaran kadang telat",
+        "hari": "senin",
+        "wilayah": "subang"
+    },
+    {
+        "lat": -6.5255225,
+        "lng": 107.6740924,
+        "desc": "<b>Rahmat Jaya - Kalijati</b><br>Nomor: 0822-1442-5228<br>Tempo: 37 Hari<br>Status: Aktif<br>Limit: Rp. 5.000.000<br>Penggunaan: Rp. 10.000.000 - Rp. 20.000.000<br>Keterangan: Pembayaran selalu telat",
+        "hari": "senin",
+        "wilayah": "subang"
+    },
+    {
+        "lat": -6.5255538,
+        "lng": 107.6748056,
+        "desc": "<b>Cempaka - Kalijati</b><br>Nomor: 0857-0320-9252<br>Tempo: 17 Hari<br>Status: Aktif<br>Limit: Rp. 25.000.000<br>Penggunaan: Rp. 15.000.000 - Rp. 20.000.000<br>Keterangan: Pembayaran Tepat waktu",
+        "hari": "senin",
+        "wilayah": "subang"
+    },
+    {
+        "lat": -6.5253133,
+        "lng": 107.674304,
+        "desc": "<b>Hera jaya - Kalijati</b><br>Nomor: 0852-2093-2697<br>Tempo: 23 Hari<br>Status: Aktif<br>Limit: Rp. 12.000.000<br>Penggunaan: Rp. 3.000.000 - Rp. 5.000.000<br>Keterangan: Pembayaran Tepat waktu",
+        "hari": "senin",
+        "wilayah": "subang"
+    },
+    {
+        "lat": -6.5252073,
+        "lng": 107.6746466,
+        "desc": "<b>Ujang - Kalijati</b><br>Nomor: 0859-2627-4699<br>Tempo: 37 Hari<br>Status: Aktif<br>Limit: Rp. 60.000.000<br>Penggunaan: Rp. 50.000.000 - Rp. 60.000.000<br>Keterangan: Pembayaran Telat di hari ke 37-42 Hari",
+        "hari": "senin",
+        "wilayah": "subang"
+    },
+    {
+        "lat": -6.5204119,
+        "lng": 107.6742433,
+        "desc": "<b>Darmaga - Kalijati</b><br>Nomor: 0821-1954-1151<br>Tempo: 14 Hari<br>Status: Tidak Aktif (Menghilang)<br>Limit: Rp.0<br>Penggunaan: Rp. 6.000.000<br>Keterangan: Pembayaran selalu telat",
+        "hari": "senin",
+        "wilayah": "subang"
+    },
+    {
+        "lat": -6.4503173,
+        "lng": 107.6858221,
+        "desc": "<b>Megaria - Purwadadi</b><br>Nomor: 0821-7443-3319<br>Tempo: 37 Hari<br>Status: Aktif<br>Limit: Rp. 60.000.000<br>Penggunaan: Rp. 30.000.000 - Rp. 40.000.000<br>Keterangan: Pembayaran kadang telat",
+        "hari": "senin",
+        "wilayah": "subang"
+    },
+    {
+        "lat": -6.4498828,
+        "lng": 107.6861949,
+        "desc": "<b>Hj. Dadang - Purwadadi</b><br>Nomor: 0821-2162-4035<br>Tempo: 37 Hari<br>Status: Aktif<br>Limit: Rp. 96.000.000<br>Penggunaan: Rp. 40.000.000 - Rp. 60.000.000<br>Keterangan: Pembayaran Tepat waktu",
+        "hari": "senin",
+        "wilayah": "subang"
+    },
+    {
+        "lat": -6.4498905,
+        "lng": 107.6862536,
+        "desc": "<b>Hj. Imam - Purwadadi</b><br>Nomor: 0821-1967-7960<br>Tempo: 16 Hari<br>Status: Aktif<br>Limit: Rp. 24.000.000<br>Penggunaan: Rp. 1.000.000 - Rp. 4.000.000<br>Keterangan: Pembayaran Tepat waktu",
+        "hari": "senin",
+        "wilayah": "subang"
+    },
+    {
+        "lat": -6.4499152,
+        "lng": 107.68638,
+        "desc": "<b>Purnama - Purwadadi</b><br>Nomor: 0813-9 409-0501<br>Tempo: 26 Hari<br>Status: Aktif<br>Limit: Rp. 24.000.000<br>Penggunaan: Rp. 4.000.000 - Rp. 5.000.000<br>Keterangan: Pembayaran 21 Hari",
+        "hari": "senin",
+        "wilayah": "subang"
+    },
+    {
+        "lat": -6.4496383,
+        "lng": 107.6864862,
+        "desc": "<b>Hj. Ida - Purwadadi</b><br>Nomor: 0853-1732-8999<br>Tempo: 16 Hari<br>Status: Aktif<br>Limit: Rp. 60.000.000<br>Penggunaan: Rp. 3.000.000 - Rp. 6.000.000<br>Keterangan: Pembayaran Tepat waktu",
+        "hari": "senin",
+        "wilayah": "subang"
+    },
+    {
+        "lat": -6.4458946,
+        "lng": 107.6865094,
+        "desc": "<b>Teh Mut - Purwadadi</b><br>Nomor: 0812-2467-4780<br>Tempo: 23 Hari<br>Status: Aktif<br>Limit: Rp. 24.000.000<br>Penggunaan: Rp. 3.000.000 - Rp. 6.000.000<br>Keterangan: Pembayaran Tepat waktu",
+        "hari": "senin",
+        "wilayah": "subang"
+    },
+    {
+        "lat": -6.5396305,
+        "lng": 107.7740571,
+        "desc": "<b>CV. 3 Makmur - Terminal</b><br>Nomor: 0851-5051-0776<br>Tempo: 1 Bulan<br>Status: Tidak Aktif<br>Limit: Rp. 6.000.000<br>Penggunaan: Rp. 3.000.000 - Rp. 5.000.000<br>Keterangan: Pembayaran selalu telat",
+        "hari": "senin",
+        "wilayah": "subang"
+    },
+    {
+        "lat": -6.451444,
+        "lng": 107.6623166,
+        "desc": "<b>Kios Buyung - Purwadadi</b><br>Nomor: 0897-9612-188<br>Tempo: 16 Hari<br>Status: Aktif<br>Limit: Rp. 12.000.000<br>Penggunaan: Rp. 1.000.000 - Rp. 2.000.000<br>Keterangan: Pembayaran Tepat waktu",
+        "hari": "senin",
+        "wilayah": "subang"
+    },
+    {
+        "lat": -6.5117891,
+        "lng": 107.6757725,
+        "desc": "<b>CV. Sedjiwa - Purwadadi</b><br>Nomor: 0896-4677-7937<br>Tempo: 23 Hari<br>Status: Aktif<br>Limit: Rp. 12.000.000<br>Penggunaan: Rp. 1.000.000 - Rp. 3.000.000<br>Keterangan: Pembayaran tepat waktu",
+        "hari": "senin",
+        "wilayah": "subang"
+    },
+    {
+        "lat": -6.5252203,
+        "lng": 107.6747791,
+        "desc": "<b>Cicin - Kalijati</b><br>Nomor: 0813-9424-3821<br>Tempo: 23 Hari<br>Status: Aktif<br>Limit: Rp. 12.000.000<br>Penggunaan: Rp. 5.000.000 - Rp. 9.000.000<br>Keterangan: Pembayaran Tepat waktu",
+        "hari": "senin",
+        "wilayah": "subang"
+    },
+    {
+        "lat": -6.8793724,
+        "lng": 107.539874,
+        "desc": "<b>Tendy - Antri</b><br>Nomor: 0821-1163-3090<br>Tempo: 23 Hari<br>Status: Aktif<br>Limit: Rp. 12.000.000<br>Penggunaan: Rp. 1.000.000 - Rp. 3.000.000<br>Keterangan: Pembayaran tepat waktu",
+        "hari": "Selasa",
+        "wilayah": "Cimahi"
+    },
+    {
+        "lat": -6.8794327,
+        "lng": 107.5399183,
+        "desc": "<b>Doni - Antri</b><br>Nomor: 0812-4351-4842<br>Tempo: 23 Hari<br>Status: Aktif<br>Limit: Rp. 12.000.000<br>Penggunaan: Rp. 4.000.000 - Rp. 6.000.000<br>Keterangan: Pembayaran kadang telat",
+        "hari": "Selasa",
+        "wilayah": "Cimahi"
+    },
+    {
+        "lat": -6.8796331,
+        "lng": 107.5399773,
+        "desc": "<b>Namira - Antri</b><br>Nomor: 0858-7295-4450<br>Tempo: 37 Hari<br>Status: Aktif<br>Limit: Rp. 36.000.000<br>Penggunaan: Rp. 9.000.000 - Rp. 12.000.000<br>Keterangan: Pembayaran tepat waktu",
+        "hari": "Selasa",
+        "wilayah": "Cimahi"
+    },
+    {
+        "lat": -6.8796943,
+        "lng": 107.5399508,
+        "desc": "<b>Anton - Antri</b><br>Nomor: 0821-4312-8831<br>Tempo: 14 Hari<br>Status: Aktif<br>Limit: Rp. 12.000.000<br>Penggunaan: Rp. 1.000.000 - Rp. 3.000.000<br>Keterangan: Pembayaran tepat waktu",
+        "hari": "Selasa",
+        "wilayah": "Cimahi"
+    },
+    {
+        "lat": -6.8796567,
+        "lng": 107.5399273,
+        "desc": "<b>Abang - Antri</b><br>Nomor: 0821-1560-7623<br>Tempo: 23 Hari<br>Status: Aktif<br>Limit: Rp. 6.000.000<br>Penggunaan: Rp. 1.000.000 - Rp. 2.000.000<br>Keterangan: Pembayaran tepat waktu",
+        "hari": "Selasa",
+        "wilayah": "Cimahi"
+    },
+    {
+        "lat": -6.8699683,
+        "lng": 107.5428949,
+        "desc": "<b>Aneka Utama - Pasar Atas</b><br>Nomor: 0819-1007-7884<br>Tempo: 23 Hari<br>Status: Aktif<br>Limit: Rp. 60.000.000<br>Penggunaan: Rp. 10.000.000 - Rp. 30.000.000<br>Keterangan: Pembayaran tepat waktu",
+        "hari": "Selasa",
+        "wilayah": "Cimahi"
+    },
+    {
+        "lat": -6.8667335,
+        "lng": 107.5431262,
+        "desc": "<b>Planka 88 - Cimahi</b><br>Nomor: 0853-5222-5277<br>Tempo: 23 Hari<br>Status: Aktif<br>Limit: Rp. 12.000.000<br>Penggunaan: Rp. 2.000.000 - Rp. 5.000.000<br>Keterangan: Pembayaran tepat waktu",
+        "hari": "Selasa",
+        "wilayah": "Cimahi"
+    },
+    {
+        "lat": -6.8741122,
+        "lng": 107.5320658,
+        "desc": "<b>Hendro - Cisangkan</b><br>Nomor: 0813-2075-5362<br>Tempo: 31 Hari<br>Status: Aktif<br>Limit: Rp. 12.000.000<br>Penggunaan: Rp. 4.000.000 - Rp. 6.000.000<br>Keterangan: Pembayaran selalu telat",
+        "hari": "Selasa",
+        "wilayah": "Cimahi"
+    },
+    {
+        "lat": -6.87494,
+        "lng": 107.5318623,
+        "desc": "<b>Yandri - Cisangkan</b><br>Nomor: 0821-2773-6525<br>Tempo: 37 Hari<br>Status: Aktif<br>Limit: Rp. 50.000.000<br>Penggunaan: Rp. 30.000.000 - Rp. 40.000.000<br>Keterangan: Pembayaran tepat waktu",
+        "hari": "Selasa",
+        "wilayah": "Cimahi"
+    },
+    {
+        "lat": -6.8753002,
+        "lng": 107.5315622,
+        "desc": "<b>Anton - Cisangkan</b><br>Nomor: 0821-4312-8831<br>Tempo: 37 Hari<br>Status: Aktif<br>Limit: Rp. 24.000.000<br>Penggunaan: Rp. 2.000.000 - Rp. 4.000.000<br>Keterangan: Pembayaran Tepat waktu",
+        "hari": "Selasa",
+        "wilayah": "Cimahi"
+    },
+    {
+        "lat": -6.8673703,
+        "lng": 107.5232604,
+        "desc": "<b>Fuji - Gofur</b><br>Nomor: 0821-1954-6463<br>Tempo: 37 Hari<br>Status: Aktif<br>Limit: Rp. 120.000.000<br>Penggunaan: Rp. 5.000.000 - Rp. 15.000.000<br>Keterangan: Pembayaran tepat waktu",
+        "hari": "Selasa",
+        "wilayah": "Cimahi"
+    },
+    {
+        "lat": -6.8648561,
+        "lng": 107.522736,
+        "desc": "<b>Farissa - Gofur</b><br>Nomor: 0821-1821-0963<br>Tempo: 31 Hari<br>Status: Aktif<br>Limit: Rp. 24.000.000<br>Penggunaan: Rp. 10.000.000 - 14.000.000<br>Keterangan: Pembayaran tepat waktu",
+        "hari": "Selasa",
+        "wilayah": "Cimahi"
+    },
+    {
+        "lat": -6.8697962,
+        "lng": 107.5166592,
+        "desc": "<b>Bu Bedah - Cimahi</b><br>Nomor: 0821-1821-0963<br>Tempo: 31 Hari<br>Status: Aktif<br>Limit: Rp. 12.000.000<br>Penggunaan: Rp. 2.000.000 - 4.000.000<br>Keterangan: Pembayaran tepat waktu",
+        "hari": "Selasa",
+        "wilayah": "Cimahi"
+    },
+    {
+        "lat": -6.858933,
+        "lng": 107.533337,
+        "desc": "<b>Planka Jasmine - Cimahi</b><br>Nomor: 0813-2043-8880<br>Tempo: 31 Hari<br>Status: Aktif<br>Limit: Rp. 12.000.000<br>Penggunaan: Rp. 3.000.000<br>Keterangan: Pembayaran tepat waktu",
+        "hari": "Selasa",
+        "wilayah": "Cimahi"
+    },
+    {
+        "lat": -7.0294202,
+        "lng": 107.5203231,
+        "desc": "<b>Doa Sepuh - soreang</b><br>Nomor: ?<br>Tempo: 21 Hari<br>Status: Aktif<br>Limit: Rp. 12.000.000<br>Penggunaan: Rp. 1.000.000 - 3.000.000<br>Keterangan: Pembayaran tepat waktu",
+        "hari": "Rabu",
+        "wilayah": "Ciwidey"
+    },
+    {
+        "lat": -7.0300707,
+        "lng": 107.5198269,
+        "desc": "<b>Euis - soreang</b><br>Nomor: 0877-2549-0084<br>Tempo: 24 Hari<br>Status: Aktif<br>Limit: Rp. 12.000.000<br>Penggunaan: Rp. 3.000.000 - 6.000.000<br>Keterangan: Pembayaran tepat waktu",
+        "hari": "Rabu",
+        "wilayah": "Ciwidey"
+    },
+    {
+        "lat": -7.0302963,
+        "lng": 107.5198775,
+        "desc": "<b>Rido - soreang</b><br>Nomor: 0812-1262-2984<br>Tempo: 31 Hari<br>Status: Aktif<br>Limit: Rp. 5.000.000<br>Penggunaan: Rp. 5.000.000<br>Keterangan: Pembayaran selalu telat",
+        "hari": "Rabu",
+        "wilayah": "Ciwidey"
+    },
+    {
+        "lat": -7.0249939,
+        "lng": 107.5193089,
+        "desc": "<b>Anugrah Baru - soreang</b><br>Nomor: 0812-1425-814<br>Tempo: 31 Hari<br>Status: Aktif<br>Limit: Rp. 24.000.000<br>Penggunaan: Rp. 10.000.000 - 20.000.000<br>Keterangan: Pembayaran tepat waktu",
+        "hari": "Rabu",
+        "wilayah": "Ciwidey"
+    },
+    {
+        "lat": -7.0319212,
+        "lng": 107.5057131,
+        "desc": "<b>Anugrah Baru - soreang</b><br>Nomor: 0812-2564-4827<br>Tempo: 31 Hari<br>Status: Aktif<br>Limit: Rp. 60.000.000<br>Penggunaan: Rp. 10.000.000 - 20.000.000<br>Keterangan: Pembayaran tepat waktu",
+        "hari": "Rabu",
+        "wilayah": "Ciwidey"
+    },
+    {
+        "lat": -7.0982663,
+        "lng": 107.467728,
+        "desc": "<b>Anugrah - Ciwidey</b><br>Nomor: 0857-5921-9067<br>Tempo: 31 Hari<br>Status: Aktif<br>Limit: Rp. 24.000.000<br>Penggunaan: Rp. 10.000.000 - 20.000.000<br>Keterangan: Pembayaran selalu telat",
+        "hari": "Rabu",
+        "wilayah": "Ciwidey"
+    },
+    {
+        "lat": -7.0998866,
+        "lng": 107.4711726,
+        "desc": "<b>Baorasaki - Ciwidey</b><br>Nomor: 0813-5214-1522<br>Tempo: 31 Hari<br>Status: Aktif<br>Limit: Rp. 36.000.000<br>Penggunaan: Rp. 5.000.000 - 10.000.000<br>Keterangan: Pembayaran tepat waktu",
+        "hari": "Rabu",
+        "wilayah": "Ciwidey"
+    },
+    {
+        "lat": -7.0990345,
+        "lng": 107.470092,
+        "desc": "<b>Rizqi - Ciwidey</b><br>Nomor: 08<br>Tempo: 31 Hari<br>Status: Aktif<br>Limit: Rp. 12.000.000<br>Penggunaan: Rp. 2.000.000 - 3.000.000<br>Keterangan: Pembayaran selalu telat",
+        "hari": "Rabu",
+        "wilayah": "Ciwidey"
+    },
+    {
+        "lat": -7.0988212,
+        "lng": 107.470833,
+        "desc": "<b>Deska - Ciwidey</b><br>Nomor: <br>Tempo: 21 Hari<br>Status: Aktif<br>Limit: Rp. 12.000.000<br>Penggunaan: Rp. 1.000.000 - 3.000.000<br>Keterangan: Pembayaran tepat waktu",
+        "hari": "Rabu",
+        "wilayah": "Ciwidey"
+    },
+    {
+        "lat": -7.0983648,
+        "lng": 107.4698472,
+        "desc": "<b>sadar - Ciwidey</b><br>Nomor: 08<br>Tempo: 31 Hari<br>Status: Aktif<br>Limit: Rp. 24.000.000<br>Penggunaan: Rp. 10.000.000 - 20.000.000<br>Keterangan: Pembayaran selalu telat",
+        "hari": "Rabu",
+        "wilayah": "Ciwidey"
+    },
+    {
+        "lat": -7.0985048,
+        "lng": 107.4701912,
+        "desc": "<b>Hj. jajang - Ciwidey</b><br>Nomor: 08<br>Tempo: 31 Hari<br>Status: Aktif<br>Limit: Rp. 24.000.000<br>Penggunaan: Rp. 10.000.000 - 20.000.000<br>Keterangan: Pembayaran selalu telat",
+        "hari": "Rabu",
+        "wilayah": "Ciwidey"
+    },
+    {
+        "lat": -7.0984722,
+        "lng": 107.4703069,
+        "desc": "<b>Entis - Ciwidey</b><br>Nomor: 08<br>Tempo: 31 Hari<br>Status: Aktif<br>Limit: Rp. 24.000.000<br>Penggunaan: Rp. 10.000.000 - 20.000.000<br>Keterangan: Pembayaran selalu telat",
+        "hari": "Rabu",
+        "wilayah": "Ciwidey"
+    },
+    {
+        "lat": -7.0984473,
+        "lng": 107.4701094,
+        "desc": "<b>PD Star 2000 - Ciwidey</b><br>Nomor: 08<br>Tempo: 31 Hari<br>Status: Aktif<br>Limit: Rp. 24.000.000<br>Penggunaan: Rp. 10.000.000 - 20.000.000<br>Keterangan: Pembayaran selalu telat",
+        "hari": "Rabu",
+        "wilayah": "Ciwidey"
+    },
+    {
+        "lat": -7.098447,
+        "lng": 107.4699793,
+        "desc": "<b>Mas aji - Ciwidey</b><br>Nomor: 08<br>Tempo: 31 Hari<br>Status: Aktif<br>Limit: Rp. 24.000.000<br>Penggunaan: Rp. 10.000.000 - 20.000.000<br>Keterangan: Pembayaran selalu telat",
+        "hari": "Rabu",
+        "wilayah": "Ciwidey"
+    },
+    {
+        "lat": -7.0983634,
+        "lng": 107.4699767,
+        "desc": "<b>Tunggal roso - Ciwidey</b><br>Nomor: 08<br>Tempo: 17 Hari<br>Status: Aktif<br>Limit: Rp. 6.000.000<br>Penggunaan: Rp. 1.000.000 - 3.000.000<br>Keterangan: Pembayaran tepat waktu",
+        "hari": "Rabu",
+        "wilayah": "Ciwidey"
+    },
+    {
+        "lat": -7.1050222,
+        "lng": 107.4580921,
+        "desc": "<b>Suka sari - Ciwidey</b><br>Nomor: 08<br>Tempo: 31 Hari<br>Status: Aktif<br>Limit: Rp. 6.000.000<br>Penggunaan: Rp. 1.000.000 - 3.000.000<br>Keterangan: Pembayaran tepat waktu",
+        "hari": "Rabu",
+        "wilayah": "Ciwidey"
+    }
+]

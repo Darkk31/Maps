@@ -1,0 +1,798 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Peta Pelanggan</title>
+    <!-- CSS Leaflet -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.css">
+    <!-- CSS Cluster -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+    integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
+    crossorigin=""/>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster/dist/MarkerCluster.css" />
+    <link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster/dist/MarkerCluster.Default.css" />
+    <!-- CSS Fullscreen -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet.fullscreen/1.6.0/Control.FullScreen.css" />
+    
+    <!-- Add this after your existing style tag -->
+<style id="darkModeStyles">
+    /* Dark Mode */
+    body.dark-mode {
+        background: #1a1a1a;
+    }
+
+    .dark-mode .search-container,
+    .dark-mode .toggle-button,
+    .dark-mode .toggle-menu,
+    .dark-mode .legend,
+    .dark-mode .info-box div,
+    .dark-mode .info-box{
+        background: #2c3e50;
+        color: #fff;
+    }
+
+    .dark-mode .search-container input,
+    .dark-mode .search-container select {
+        background: #34495e;
+        color: #fff;
+        border-color: #456789;
+    }
+
+    .dark-mode .search-container input::placeholder {
+        color: #bdc3c7;
+    }
+
+    .dark-mode .autocomplete-items {
+        background: #2c3e50;
+        border-color: #456789;
+    }
+
+
+    .dark-mode .autocomplete-items div {
+        color: #fff;
+        border-bottom-color: #456789;
+    }
+
+    .dark-mode .autocomplete-items div:hover {
+        background: #34495e;
+    }
+
+    .dark-mode .area-header {
+        background: #34495e;
+        color: #fff;
+    }
+
+    .dark-mode .area-header:hover {
+        background: #456789;
+    }
+
+    .dark-mode .customer-item:hover {
+        background: #34495e;
+    }
+
+    /* Theme Toggle Button */
+    .theme-toggle {
+        position: absolute;
+        top: 20px;
+        left: 30px;
+        z-index: 1000;
+        background: white;
+        padding: 10px 15px;
+        border-radius: 8px;
+        box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        cursor: pointer;
+        transition: all 0.3s ease;
+        border: none;
+        font-size: 14px;
+    }
+
+    .dark-mode .theme-toggle {
+        background: #2c3e50;
+        color: #fff;
+    }
+
+    @media (max-width: 768px) {
+        .theme-toggle {
+            top: 10px;
+            left: 45px;
+        }
+    }
+    </style>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        #map {
+            height: 100vh;
+            width: 100%;
+        }
+
+        /* Header Style */
+        .header {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            background: rgba(255, 255, 255, 0.9);
+            padding: 10px 20px;
+            z-index: 1000;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        /* Search Container */
+        .search-container {
+            position: absolute;
+            top: 80px;
+            right: 20px;
+            z-index: 1000;
+            background: white;
+            padding: 15px;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            width: 300px;
+            transition: all 0.3s ease;
+        }
+        #showAllBtn {
+        position: absolute;
+        right: 10px;
+        top: 50%;
+        transform: translateY(-50%);
+        background: #3498db;
+        color: white;
+        border: none;
+        padding: 6px 12px;
+        border-radius: 4px;
+        cursor: pointer;
+        font-size: 12px;
+        transition: all 0.2s ease;
+    }
+
+    #showAllBtn:hover {
+        background: #2980b9;
+    }
+
+    /* Sesuaikan padding input untuk tombol */
+    .search-container input {
+        padding-right: 120px;
+    }
+
+        .search-wrapper {
+            position: relative;
+            margin-bottom: 10px;
+        }
+
+        .search-container input,
+        .search-container select {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #e0e0e0;
+            border-radius: 8px;
+            font-size: 14px;
+            transition: all 0.3s ease;
+            background: #f8f9fa;
+        }
+
+        .search-container input:focus,
+        .search-container select:focus {
+            outline: none;
+            border-color: #3498db;
+            box-shadow: 0 0 0 3px rgba(52,152,219,0.2);
+            background: white;
+        }
+
+        /* Autocomplete */
+        .autocomplete-items {
+            position: absolute;
+            top: 100%;
+            left: 0;
+            right: 0;
+            background: white;
+            border: 1px solid #e0e0e0;
+            border-top: none;
+            border-radius: 0 0 8px 8px;
+            max-height: 200px;
+            overflow-y: auto;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            z-index: 1001;
+            display: none;
+        }
+
+        .autocomplete-items div {
+            padding: 12px;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            border-bottom: 1px solid #f0f0f0;
+        }
+
+        .autocomplete-items div:last-child {
+            border-bottom: none;
+        }
+
+        .autocomplete-items div:hover {
+            background-color: #f8f9fa;
+            padding-left: 15px;
+        }
+        .theme-toggle {
+    position: absolute;
+    top: 10px;
+    left: 44px;
+    z-index: 1000;
+        }
+
+        /* Toggle Menu */
+        .toggle-button {
+            position: absolute;
+            top: 20px;
+            right: 330px;
+            z-index: 1000;
+            background: white;
+            padding: 10px 15px;
+            border-radius: 8px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            cursor: pointer;
+            transition: all 0.3s ease;
+            border: none;
+            font-size: 15px;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            color: #2c3e50;
+        }
+
+        .toggle-button:hover {
+            background: #f8f9fa;
+            transform: translateY(-2px);
+        }
+
+        .toggle-menu {
+            position: absolute;
+            top: 80px;
+            right: 20px;
+            z-index: 1000;
+            background: white;
+            padding: 20px;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            width: 300px;
+            max-height: calc(100vh - 100px);
+            overflow-y: auto;
+            display: none;
+            transition: all 0.3s ease;
+        }
+
+        .toggle-menu h3 {
+            margin: 0 0 15px 0;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #f0f0f0;
+            color: #2c3e50;
+            font-size: 16px;
+            font-weight: 600;
+        }
+
+        .area-group {
+            margin-bottom: 15px;
+        }
+
+        .area-header {
+            background: #f8f9fa;
+            padding: 12px 15px;
+            cursor: pointer;
+            border-radius: 8px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: all 0.2s ease;
+            color: #2c3e50;
+            font-weight: 500;
+        }
+
+        .area-header:hover {
+            background: #e9ecef;
+        }
+
+        .area-content {
+            padding: 5px 15px;
+            display: none;
+        }
+
+        .area-content.active {
+            display: block;
+            animation: fadeIn 0.3s ease;
+        }
+
+        .customer-item {
+            padding: 10px 15px;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            color: #666;
+            border-radius: 6px;
+            margin: 2px 0;
+        }
+
+        .customer-item:hover {
+            color: #3498db;
+            background: #f8f9fa;
+            padding-left: 20px;
+        }
+
+        /* Info Box */
+        .info-box {
+            position: absolute;
+            bottom: 0;
+            left: 5px;
+            z-index: 1000;
+            background: white;
+            padding: 20px;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            line-height: 1.8;
+        }
+
+        .info-box div {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin: 5px 0;
+            color: #2c3e50;
+        }
+
+        .info-box span {
+            font-weight: 600;
+            color: #3498db;
+            margin-left: 15px;
+        }
+
+        /* Animations */
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(-10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .search-container {
+                top: 50px;
+                right: 0;
+                width: auto;
+            }
+
+            .toggle-button {
+                top: 15px;
+                right: 15px;
+            }
+
+            .toggle-menu {
+                top: 50px;
+                right: 0;
+                width: auto;
+            }
+            .info-box {
+                bottom: 0;
+                left: 0;
+                width: 20Spx;
+                font-size: 13px;
+            }
+        }
+
+        /* Popup Styles */
+        .leaflet-popup-content-wrapper {
+            background: #fff;
+            border-radius: 8px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            padding: 0;
+        }
+
+        .leaflet-popup-content {
+            margin: 0;
+            padding: 15px;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            min-width: 250px;
+        }
+
+        .leaflet-popup-content b {
+            display: block;
+            font-size: 16px;
+            color: #2c3e50;
+            margin-bottom: 10px;
+            padding-bottom: 8px;
+            border-bottom: 1px solid #eee;
+            text-align: center;
+        }
+
+        .leaflet-popup-content br {
+            display: block;
+            margin: 8px 0;
+            content: "";
+        }
+
+        .leaflet-popup-tip {
+            background: #fff;
+        }
+
+        .leaflet-container a.leaflet-popup-close-button {
+            color: #666;
+            padding: 8px;
+            width: 28px;
+            height: 28px;
+        }
+
+        /* Dark Mode Popup Styles */
+        .dark-mode .leaflet-popup-content-wrapper {
+            background: #2c3e50;
+            color: #fff;
+        }
+
+        .dark-mode .leaflet-popup-tip {
+            background: #2c3e50;
+        }
+
+        .dark-mode .leaflet-popup-content b {
+            color: #fff;
+            border-bottom-color: #456789;
+        }
+
+        .dark-mode .leaflet-container a.leaflet-popup-close-button {
+            color: #fff;
+        }
+    </style>
+</head>
+<body>
+    <div id="map"></div>
+<button class="theme-toggle" onclick="toggleTheme()">
+    <span id="theme-icon">🌙</span>
+</button>
+
+    <!-- Search & Filter -->
+    <div class="search-container">
+    
+    <select id="regionFilter">
+        <option value="all">Semua Wilayah</option>
+        <option value="Cimahi">Cimahi</option>
+        <option value="Subang">Subang</option>
+        <!-- Tambahkan opsi lainnya -->
+    </select>
+
+        <div class="search-wrapper">
+            <input type="text" id="searchInput" placeholder="Cari pelanggan...">
+            <button id="showAllBtn">^</button>
+            <div id="autocompleteList" class="autocomplete-items"></div>
+        </div>
+        <select id="statusFilter">
+            <option value="all">Semua Status</option>
+            <option value="active">Aktif</option>
+            <option value="inactive">Tidak Aktif</option>
+        </select>
+    </div>
+
+    <!-- Toggle Menu -->
+    <button class="toggle-button" onclick="toggleMenu()">
+        <i>☰</i> Menu Pelanggan
+    </button>
+    <div class="toggle-menu" id="customerMenu">
+        <h3>Daftar Pelanggan</h3>
+        <div id="areaList"></div>
+    </div>
+
+    <!-- Info Box -->
+    <div class="info-box">
+        <div>Total Customer: <span id="totalCustomers">0</span></div>
+        <div>Pelanggan Aktif: <span id="activeCustomers">0</span></div>
+        <div>Pelanggan Tidak Aktif: <span id="inactiveCustomers">0</span></div>
+    </div>
+
+    <!-- JavaScript-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.js"></script>
+    <script src="https://unpkg.com/leaflet.markercluster/dist/leaflet.markercluster.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet.fullscreen/1.6.0/Control.FullScreen.js"></script>
+    
+    <script>
+        
+let map; // Deklarasikan map di sini untuk akses global
+let customerData = [];
+
+// Fungsi untuk inisialisasi peta
+function initMap(data) {
+    if (!map) {
+        map = L.map('map').setView([-6.6776664, 107.6828854], 13); // Set koordinat dan zoom level
+
+        // Menambahkan Tile Layer ke peta
+        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+            attribution: '&copy; OpenStreetMap contributors'
+        }).addTo(map);
+    }
+
+    // Menambahkan circle marker ke peta berdasarkan data pelanggan
+    const markers = L.markerClusterGroup();
+    data.forEach(customer => {
+        const isActive = !customer.desc.includes('Tidak Aktif'); // Tentukan status aktif
+        const circleColor = isActive ? '#2ecc71' : '#e74c3c'; // Hijau untuk aktif, Merah untuk tidak aktif
+
+        // Buat circle marker dengan hiasan
+        const circleMarker = L.circleMarker([customer.lat, customer.lng], {
+            radius: 10, // Ukuran lingkaran
+            fillColor: circleColor, // Warna lingkaran
+            color: '#fff', // Warna border
+            weight: 1.2, // Ketebalan border
+            opacity: 0.9,
+            fillOpacity: 0.8, // Transparansi dalam lingkaran
+            className: 'circle-icon',
+            // Efek gradasi dan glow
+            renderer: new L.Canvas() // Untuk memungkinkan penggunaan gradient
+        }).bindPopup(customer.desc); // Menampilkan popup dengan deskripsi pelanggan
+
+        markers.addLayer(circleMarker); // Menambahkan circle marker ke marker cluster
+    });
+
+    map.addLayer(markers); //
+
+    // Memastikan toggleTheme() hanya dipanggil setelah map siap
+    toggleTheme(); // Panggil toggleTheme setelah map siap
+}
+
+// Memuat data pelanggan dan memulai inisialisasi peta
+fetch('customerData.json')
+    .then(response => response.json())
+    .then(data => {
+        customerData = data;  // Simpan data pelanggan
+        initMap(customerData); // Inisialisasi peta
+    })
+    .catch(error => console.error('Gagal memuat data:', error));
+
+// Fungsi toggle theme
+function toggleTheme() {
+    const body = document.body;
+    const themeIcon = document.getElementById('theme-icon');
+    
+    // Periksa apakah map sudah ada sebelum mengaksesnya
+    if (map) {
+        if (body.classList.contains('dark-mode')) {
+            body.classList.remove('dark-mode');
+            themeIcon.textContent = '🌙';
+            localStorage.setItem('theme', 'light');
+
+            map.eachLayer(layer => {
+                if (layer instanceof L.TileLayer) {
+                    map.removeLayer(layer);
+                }
+            });
+
+            L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+                maxZoom: 19,
+                attribution: '© OpenStreetMap contributors'
+            }).addTo(map);
+
+        } else {
+            body.classList.add('dark-mode');
+            themeIcon.textContent = '☀️';
+            localStorage.setItem('theme', 'dark');
+
+            map.eachLayer(layer => {
+                if (layer instanceof L.TileLayer) {
+                    map.removeLayer(layer);
+                }
+            });
+
+            L.tileLayer('https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png', {
+                maxZoom: 19,
+                attribution: '© OpenStreetMap contributors, © CARTO'
+            }).addTo(map);
+        }
+    } else {
+        console.error('Map is not initialized yet');
+    }
+}
+   
+   // Fungsi untuk toggle menu pelanggan
+function toggleMenu() {
+    const menu = document.getElementById('customerMenu');
+    // Periksa apakah menu sedang ditampilkan, jika ya sembunyikan, jika tidak tampilkan
+    if (menu.style.display === 'block') {
+        menu.style.display = 'none';
+    } else {
+        menu.style.display = 'block';
+    }
+}
+
+// Fungsi untuk mengelompokkan pelanggan berdasarkan wilayah dan hari
+function groupCustomersByAreaAndDay() {
+    const areas = {};
+
+    customerData.forEach(customer => {
+        const area = customer.wilayah || "Wilayah Tidak Diketahui";
+        const day = customer.hari || "Hari Tidak Diketahui";
+
+        if (!areas[area]) {
+            areas[area] = {};
+        }
+        if (!areas[area][day]) {
+            areas[area][day] = [];
+        }
+
+        areas[area][day].push({
+            name: customer.desc.match(/<b>(.*?)<\/b>/)[1],
+            lat: customer.lat,
+            lng: customer.lng,
+            desc: customer.desc
+        });
+    });
+
+    const sortedAreas = Object.keys(areas)
+        .sort((a, b) => a.localeCompare(b))
+        .map(area => ({
+            area,
+            days: Object.keys(areas[area])
+                .sort((a, b) => a.localeCompare(b))
+                .map(day => ({
+                    day,
+                    customers: areas[area][day]
+                }))
+        }));
+
+    return sortedAreas;
+}
+
+// Fungsi untuk render menu pelanggan di sidebar
+function renderCustomerMenu() {
+    const groupedData = groupCustomersByAreaAndDay(); // Kelompokkan pelanggan berdasarkan area dan hari
+    const areaList = document.getElementById('areaList'); // ID elemen untuk menampilkan menu
+
+    if (!areaList) {
+        console.error('Element #areaList not found');
+        return;
+    }
+
+    areaList.innerHTML = ''; // Reset isi elemen
+
+    groupedData.forEach(areaGroup => {
+        const areaHeader = document.createElement('div');
+        areaHeader.className = 'area-header';
+        areaHeader.innerHTML = `${areaGroup.area} (${areaGroup.days.length})`;
+
+        const areaContent = document.createElement('div');
+        areaContent.className = 'area-content';
+
+        areaGroup.days.forEach(dayGroup => {
+            const dayHeader = document.createElement('div');
+            dayHeader.className = 'day-header';
+            dayHeader.innerHTML = `${dayGroup.day} (${dayGroup.customers.length})`;
+
+            const customerList = document.createElement('div');
+            customerList.className = 'customer-list';
+
+            dayGroup.customers.forEach(customer => {
+                const customerItem = document.createElement('div');
+                customerItem.className = 'customer-item';
+                customerItem.textContent = customer.name;
+
+                // Ketika klik item pelanggan, peta akan zoom ke lokasi pelanggan
+                customerItem.onclick = () => {
+                    map.setView([customer.lat, customer.lng], 16);
+                    const popup = L.popup()
+                        .setLatLng([customer.lat, customer.lng])
+                        .setContent(customer.desc) // Menampilkan deskripsi pelanggan
+                        .openOn(map);
+                };
+
+                customerList.appendChild(customerItem);
+            });
+
+            areaContent.appendChild(dayHeader);
+            areaContent.appendChild(customerList);
+        });
+
+        // Klik area untuk membuka/tutup daftar pelanggan dalam area tersebut
+        areaHeader.onclick = () => {
+            areaContent.classList.toggle('active');
+        };
+
+        areaList.appendChild(areaHeader);
+        areaList.appendChild(areaContent);
+    });
+}
+
+// Memuat data pelanggan dan merender menu
+fetch('customerData.json')
+    .then(response => response.json())
+    .then(data => {
+        customerData = data;  // Simpan data pelanggan
+        initMap(customerData); // Inisialisasi peta
+        renderCustomerMenu();  // Render menu pelanggan setelah data dimuat
+    })
+    .catch(error => console.error('Gagal memuat data:', error));
+
+// Fungsi untuk toggle tema (dark/light mode)
+function toggleTheme() {
+    const body = document.body;
+    const themeIcon = document.getElementById('theme-icon');
+    
+    if (body.classList.contains('dark-mode')) {
+        body.classList.remove('dark-mode');
+        themeIcon.textContent = '🌙';
+        localStorage.setItem('theme', 'light');
+
+        // Ubah tile layer peta ke light mode
+        map.eachLayer(layer => {
+            if (layer instanceof L.TileLayer) {
+                map.removeLayer(layer);
+            }
+        });
+        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+            maxZoom: 19,
+            attribution: '© OpenStreetMap contributors'
+        }).addTo(map);
+    } else {
+        body.classList.add('dark-mode');
+        themeIcon.textContent = '☀️';
+        localStorage.setItem('theme', 'dark');
+
+        // Ubah tile layer peta ke dark mode
+        map.eachLayer(layer => {
+            if (layer instanceof L.TileLayer) {
+                map.removeLayer(layer);
+            }
+        });
+        L.tileLayer('https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png', {
+            maxZoom: 19,
+            attribution: '© OpenStreetMap contributors, © CARTO'
+        }).addTo(map);
+    }
+}
+
+// Memeriksa preferensi tema yang disimpan
+document.addEventListener('DOMContentLoaded', () => {
+    const savedTheme = localStorage.getItem('theme');
+    if (savedTheme === 'dark') {
+        toggleTheme(); // Panggil toggle theme berdasarkan tema yang disimpan
+    }
+});
+    
+// Update informasi pelanggan di info-box
+function updateInfoBox() {
+    const totalCustomers = customerData.length;
+    const activeCustomers = customerData.filter(c => !c.desc.includes('Tidak Aktif')).length;
+    const inactiveCustomers = customerData.filter(c => c.desc.includes('Tidak Aktif')).length;
+
+    document.getElementById('totalCustomers').textContent = totalCustomers;
+    document.getElementById('activeCustomers').textContent = activeCustomers;
+    document.getElementById('inactiveCustomers').textContent = inactiveCustomers;
+}
+
+// Update InfoBox setelah filter atau data dimuat
+fetch('customerData.json')
+    .then(response => response.json())
+    .then(data => {
+        customerData = data;  // Simpan data pelanggan
+        initMap(customerData); // Inisialisasi peta
+        updateInfoBox(); // Update info-box setelah data dimuat
+    })
+    .catch(error => console.error('Gagal memuat data:', error));
+
+// Update InfoBox setelah filter status diterapkan
+document.getElementById('statusFilter').addEventListener('change', function (e) {
+    const status = e.target.value;
+    
+    markersList.forEach((marker, index) => {
+        const customer = customerData[index];
+        if (status === 'all' || 
+            (status === 'active' && !customer.desc.includes('Tidak Aktif')) ||
+            (status === 'inactive' && customer.desc.includes('Tidak Aktif'))) {
+            markers.addLayer(marker);
+        } else {
+            markers.removeLayer(marker);
+        }
+    });
+
+    // Update info-box setelah filter diterapkan
+    updateInfoBox();
+});
+    </script>
+</body>
+</html>
